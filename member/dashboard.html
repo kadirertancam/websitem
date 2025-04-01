@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üye Paneli - İlan Platformu</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <h2>Üye Paneli</h2>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                    <li><a href="browse-listings.html"><i class="fas fa-search"></i> İlanları Keşfet</a></li>
+                    <li><a href="buy-coins.html"><i class="fas fa-coins"></i> Coin Satın Al</a></li>
+                    <li><a href="calls.html"><i class="fas fa-phone"></i> Görüşmelerim</a></li>
+                    <li><a href="favorites.html"><i class="fas fa-heart"></i> Favorilerim</a></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></i> Profilim</a></li>
+                    <li><a href="javascript:logout()"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="dashboard-header">
+                <h2>Hoş Geldiniz, <span class="user-name">Üye</span></h2>
+                <div class="user-info">
+                    <img src="../images/avatar-placeholder.jpg" alt="User Avatar">
+                    <span class="user-name">Üye</span>
+                </div>
+            </div>
+            
+            <div class="coin-status">
+                <div class="coin-balance">
+                    <i class="fas fa-coins"></i>
+                    <div class="coin-info">
+                        <h3>Coin Bakiyeniz</h3>
+                        <p><span class="coin-balance">0</span> Coin</p>
+                    </div>
+                </div>
+                <a href="buy-coins.html" class="btn">Coin Satın Al</a>
+            </div>
+            
+            <div class="dashboard-cards">
+                <!-- Bu alan JavaScript ile doldurulacak -->
+            </div>
+            
+            <div class="recent-listings">
+                <h3>Öne Çıkan İlanlar</h3>
+                <div class="listing-grid">
+                    <!-- Örnek ilanlar -->
+                    <div class="listing">
+                        <div class="listing-header">
+                            <h3>Örnek İlan 1</h3>
+                            <span class="price">50 TL/saat</span>
+                        </div>
+                        <div class="listing-body">
+                            <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                        </div>
+                        <div class="listing-footer">
+                            <a href="../listing-detail.html?id=1" class="btn">Detaylar</a>
+                        </div>
+                    </div>
+                    <div class="listing">
+                        <div class="listing-header">
+                            <h3>Örnek İlan 2</h3>
+                            <span class="price">75 TL/saat</span>
+                        </div>
+                        <div class="listing-body">
+                            <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                        </div>
+                        <div class="listing-footer">
+                            <a href="../listing-detail.html?id=2" class="btn">Detaylar</a>
+                        </div>
+                    </div>
+                    <div class="listing">
+                        <div class="listing-header">
+                            <h3>Örnek İlan 3</h3>
+                            <span class="price">100 TL/saat</span>
+                        </div>
+                        <div class="listing-body">
+                            <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                        </div>
+                        <div class="listing-footer">
+                            <a href="../listing-detail.html?id=3" class="btn">Detaylar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-table">
+                <!-- Bu alan JavaScript ile doldurulacak -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/site.js"></script>
+</body>
+</html>

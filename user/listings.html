@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlanlarım - İlan Platformu</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <h2>Kullanıcı Paneli</h2>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                    <li><a href="listings.html"><i class="fas fa-list"></i> İlanlarım</a></li>
+                    <li><a href="create-listing.html"><i class="fas fa-plus-circle"></i> Yeni İlan Ekle</a></li>
+                    <li><a href="calls.html"><i class="fas fa-phone"></i> Görüşmelerim</a></li>
+                    <li><a href="earnings.html"><i class="fas fa-wallet"></i> Kazançlarım</a></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></i> Profilim</a></li>
+                    <li><a href="javascript:logout()"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="dashboard-header">
+                <h2>İlanlarım</h2>
+                <div class="user-info">
+                    <img src="../images/avatar-placeholder.jpg" alt="User Avatar">
+                    <span class="user-name">Kullanıcı</span>
+                </div>
+            </div>
+            
+            <div class="action-bar">
+                <a href="create-listing.html" class="btn"><i class="fas fa-plus"></i> Yeni İlan Ekle</a>
+                <div class="search-bar">
+                    <input type="text" placeholder="İlanlarınızda arayın...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            
+            <div class="dashboard-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>İlan Başlığı</th>
+                            <th>Fiyat</th>
+                            <th>Durum</th>
+                            <th>Görüntülenme</th>
+                            <th>Oluşturma Tarihi</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Örnek veri -->
+                        <tr>
+                            <td>#1</td>
+                            <td>Örnek İlan 1</td>
+                            <td>50 TL/saat</td>
+                            <td><span class="status active">Aktif</span></td>
+                            <td>245</td>
+                            <td>01.04.2025</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="edit-listing.html?id=1" class="btn-edit"><i class="fas fa-edit"></i></a>
+                                    <a href="javascript:deleteListing(1)" class="btn-delete"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#2</td>
+                            <td>Örnek İlan 2</td>
+                            <td>75 TL/saat</td>
+                            <td><span class="status active">Aktif</span></td>
+                            <td>178</td>
+                            <td>28.03.2025</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="edit-listing.html?id=2" class="btn-edit"><i class="fas fa-edit"></i></a>
+                                    <a href="javascript:deleteListing(2)" class="btn-delete"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#3</td>
+                            <td>Örnek İlan 3</td>
+                            <td>100 TL/saat</td>
+                            <td><span class="status inactive">Pasif</span></td>
+                            <td>63</td>
+                            <td>15.03.2025</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="edit-listing.html?id=3" class="btn-edit"><i class="fas fa-edit"></i></a>
+                                    <a href="javascript:deleteListing(3)" class="btn-delete"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlanlar - İlan Platformu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>İlan Platformu</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="listings.html" class="active">İlanlar</a></li>
+                    <li><a href="about.html">Hakkımızda</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                    <li><a href="member/login.html" class="btn-login">Üye Girişi</a></li>
+                    <li><a href="user/login.html" class="btn-login">Kullanıcı Girişi</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="listings-page">
+        <div class="container">
+            <div class="listings-header">
+                <h2>İlanlar</h2>
+                <p>Platfomumuzda yayınlanan tüm ilanları görüntüleyebilirsiniz.</p>
+            </div>
+            
+            <div class="listings-filters">
+                <div class="search-bar">
+                    <input type="text" placeholder="İlanlarda ara...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <label for="category">Kategori:</label>
+                        <select id="category">
+                            <option value="">Tümü</option>
+                            <option value="1">Kategori 1</option>
+                            <option value="2">Kategori 2</option>
+                            <option value="3">Kategori 3</option>
+                            <option value="4">Kategori 4</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-option">
+                        <label for="price">Ücret:</label>
+                        <select id="price">
+                            <option value="">Tümü</option>
+                            <option value="1">0-50 TL</option>
+                            <option value="2">50-100 TL</option>
+                            <option value="3">100-200 TL</option>
+                            <option value="4">200+ TL</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-option">
+                        <label for="sort">Sırala:</label>
+                        <select id="sort">
+                            <option value="newest">En Yeni</option>
+                            <option value="oldest">En Eski</option>
+                            <option value="price_low">Fiyat (Düşük-Yüksek)</option>
+                            <option value="price_high">Fiyat (Yüksek-Düşük)</option>
+                            <option value="popularity">Popülerlik</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="listing-grid">
+                <!-- Örnek İlanlar -->
+                <div class="listing">
+                    <div class="listing-header">
+                        <h3>Örnek İlan 1</h3>
+                        <span class="price">50 TL/saat</span>
+                    </div>
+                    <div class="listing-body">
+                        <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                    </div>
+                    <div class="listing-footer">
+                        <a href="listing-detail.html?id=1" class="btn">Detaylar</a>
+                    </div>
+                </div>
+                
+                <div class="listing">
+                    <div class="listing-header">
+                        <h3>Örnek İlan 2</h3>
+                        <span class="price">75 TL/saat</span>
+                    </div>
+                    <div class="listing-body">
+                        <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                    </div>
+                    <div class="listing-footer">
+                        <a href="listing-detail.html?id=2" class="btn">Detaylar</a>
+                    </div>
+                </div>
+                
+                <div class="listing">
+                    <div class="listing-header">
+                        <h3>Örnek İlan 3</h3>
+                        <span class="price">100 TL/saat</span>
+                    </div>
+                    <div class="listing-body">
+                        <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                    </div>
+                    <div class="listing-footer">
+                        <a href="listing-detail.html?id=3" class="btn">Detaylar</a>
+                    </div>
+                </div>
+                
+                <div class="listing">
+                    <div class="listing-header">
+                        <h3>Örnek İlan 4</h3>
+                        <span class="price">60 TL/saat</span>
+                    </div>
+                    <div class="listing-body">
+                        <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                    </div>
+                    <div class="listing-footer">
+                        <a href="listing-detail.html?id=4" class="btn">Detaylar</a>
+                    </div>
+                </div>
+                
+                <div class="listing">
+                    <div class="listing-header">
+                        <h3>Örnek İlan 5</h3>
+                        <span class="price">90 TL/saat</span>
+                    </div>
+                    <div class="listing-body">
+                        <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                    </div>
+                    <div class="listing-footer">
+                        <a href="listing-detail.html?id=5" class="btn">Detaylar</a>
+                    </div>
+                </div>
+                
+                <div class="listing">
+                    <div class="listing-header">
+                        <h3>Örnek İlan 6</h3>
+                        <span class="price">120 TL/saat</span>
+                    </div>
+                    <div class="listing-body">
+                        <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                    </div>
+                    <div class="listing-footer">
+                        <a href="listing-detail.html?id=6" class="btn">Detaylar</a>
+                    </div>
+                </div>
+                
+                <div class="listing">
+                    <div class="listing-header">
+                        <h3>Örnek İlan 7</h3>
+                        <span class="price">85 TL/saat</span>
+                    </div>
+                    <div class="listing-body">
+                        <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                    </div>
+                    <div class="listing-footer">
+                        <a href="listing-detail.html?id=7" class="btn">Detaylar</a>
+                    </div>
+                </div>
+                
+                <div class="listing">
+                    <div class="listing-header">
+                        <h3>Örnek İlan 8</h3>
+                        <span class="price">70 TL/saat</span>
+                    </div>
+                    <div class="listing-body">
+                        <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                    </div>
+                    <div class="listing-footer">
+                        <a href="listing-detail.html?id=8" class="btn">Detaylar</a>
+                    </div>
+                </div>
+                
+                <div class="listing">
+                    <div class="listing-header">
+                        <h3>Örnek İlan 9</h3>
+                        <span class="price">110 TL/saat</span>
+                    </div>
+                    <div class="listing-body">
+                        <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                    </div>
+                    <div class="listing-footer">
+                        <a href="listing-detail.html?id=9" class="btn">Detaylar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <ul>
+                    <li><a href="#" class="active">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Hakkımızda</h3>
+                    <p>İlan ve görüşme platformumuz ile kullanıcı ve üyeler arasında kolay iletişim sağlıyoruz.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="listings.html">İlanlar</a></li>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>İletişim</h3>
+                    <p><i class="fas fa-envelope"></i> info@ilanplatformu.com</p>
+                    <p><i class="fas fa-phone"></i> +90 555 123 4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 İlan Platformu - Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/site.js"></script>
+</body>
+</html>

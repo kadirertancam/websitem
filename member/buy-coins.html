@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Satın Al - İlan Platformu</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <h2>Üye Paneli</h2>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                    <li><a href="browse-listings.html"><i class="fas fa-search"></i> İlanları Keşfet</a></li>
+                    <li><a href="buy-coins.html"><i class="fas fa-coins"></i> Coin Satın Al</a></li>
+                    <li><a href="calls.html"><i class="fas fa-phone"></i> Görüşmelerim</a></li>
+                    <li><a href="favorites.html"><i class="fas fa-heart"></i> Favorilerim</a></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></i> Profilim</a></li>
+                    <li><a href="javascript:logout()"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="dashboard-header">
+                <h2>Coin Satın Al</h2>
+                <div class="user-info">
+                    <img src="../images/avatar-placeholder.jpg" alt="User Avatar">
+                    <span class="user-name">Üye</span>
+                </div>
+            </div>
+            
+            <div class="coin-status">
+                <div class="coin-balance">
+                    <i class="fas fa-coins"></i>
+                    <div class="coin-info">
+                        <h3>Mevcut Coin Bakiyeniz</h3>
+                        <p><span class="coin-balance">0</span> Coin</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="coin-info-box">
+                <h3>Coinler Hakkında</h3>
+                <p>Coinler, platform içerisinde kullanıcılarla sesli veya görüntülü görüşme yapabilmeniz için gerekli olan sanal para birimidir. Her coin, görüşme süresine göre harcanır.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Sesli görüşme: 5 coin/dakika</li>
+                    <li><i class="fas fa-check"></i> Görüntülü görüşme: 8 coin/dakika</li>
+                    <li><i class="fas fa-check"></i> Coinler sınırsız süre geçerlidir</li>
+                    <li><i class="fas fa-check"></i> Güvenli ödeme altyapısı</li>
+                </ul>
+            </div>
+            
+            <h3 class="section-title">Coin Paketleri</h3>
+            
+            <div class="coin-packages">
+                <div class="coin-package">
+                    <div class="coin-package-header">
+                        <h3>Başlangıç Paketi</h3>
+                    </div>
+                    <div class="coin-package-body">
+                        <div class="coin-amount">100 Coin</div>
+                        <div class="coin-price">50 TL</div>
+                        <p>Yaklaşık 20 dakika sesli görüşme</p>
+                        <a href="javascript:buyCoin(1, 100, 50)" class="btn">Satın Al</a>
+                    </div>
+                </div>
+                
+                <div class="coin-package">
+                    <div class="coin-package-header">
+                        <h3>Standart Paket</h3>
+                    </div>
+                    <div class="coin-package-body">
+                        <div class="coin-amount">250 Coin</div>
+                        <div class="coin-price">100 TL</div>
+                        <p>Yaklaşık 50 dakika sesli görüşme</p>
+                        <a href="javascript:buyCoin(2, 250, 100)" class="btn">Satın Al</a>
+                    </div>
+                </div>
+                
+                <div class="coin-package popular">
+                    <div class="coin-package-header">
+                        <h3>Popüler Paket</h3>
+                        <span class="badge">%20 İndirim</span>
+                    </div>
+                    <div class="coin-package-body">
+                        <div class="coin-amount">600 Coin</div>
+                        <div class="coin-price">200 TL</div>
+                        <p>Yaklaşık 120 dakika sesli görüşme</p>
+                        <a href="javascript:buyCoin(3, 600, 200)" class="btn">Satın Al</a>
+                    </div>
+                </div>
+                
+                <div class="coin-package">
+                    <div class="coin-package-header">
+                        <h3>Premium Paket</h3>
+                        <span class="badge">%25 İndirim</span>
+                    </div>
+                    <div class="coin-package-body">
+                        <div class="coin-amount">1000 Coin</div>
+                        <div class="coin-price">300 TL</div>
+                        <p>Yaklaşık 200 dakika sesli görüşme</p>
+                        <a href="javascript:buyCoin(4, 1000, 300)" class="btn">Satın Al</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="payment-info">
+                <h3>Ödeme Seçenekleri</h3>
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <img src="../images/credit-card.png" alt="Kredi Kartı">
+                        <span>Kredi Kartı</span>
+                    </div>
+                    <div class="payment-option">
+                        <img src="../images/bank-transfer.png" alt="Banka Havalesi">
+                        <span>Banka Havalesi</span>
+                    </div>
+                    <div class="payment-option">
+                        <img src="../images/paypal.png" alt="PayPal">
+                        <span>PayPal</span>
+                    </div>
+                </div>
+                <p class="security-note"><i class="fas fa-lock"></i> Tüm ödemeleriniz 256-bit SSL ile şifrelenmektedir.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/site.js"></script>
+</body>
+</html>

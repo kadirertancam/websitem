@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görüşme - İlan Platformu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>İlan Platformu</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="listings.html">İlanlar</a></li>
+                    <li><a href="about.html">Hakkımızda</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                    <li><a href="member/dashboard.html" class="btn-login">Üye Paneli</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="call-page">
+        <div class="container">
+            <h2>Görüşme</h2>
+            
+            <div class="call-container">
+                <div class="call-info">
+                    <h3>Görüşme Bilgileri</h3>
+                    <div class="call-details">
+                        <div class="user-info">
+                            <img src="images/avatar-placeholder.jpg" alt="User Avatar">
+                            <div>
+                                <h4>Ahmet Yılmaz</h4>
+                                <p>Örnek İlan Başlığı</p>
+                            </div>
+                        </div>
+                        
+                        <div class="call-price">
+                            <p>Görüşme Ücreti: <span>5 Coin/dakika</span></p>
+                            <p>Mevcut Bakiyeniz: <span class="coin-balance">0</span> Coin</p>
+                        </div>
+                        
+                        <div class="call-note">
+                            <p><i class="fas fa-info-circle"></i> Görüşme esnasında dakika başı coinleriniz otomatik olarak düşecektir. Yeterli bakiye olmadığında görüşme sonlandırılacaktır.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="call-window">
+                    <div class="call-avatar">
+                        <img src="images/avatar-placeholder.jpg" alt="User Avatar">
+                        <h3>Ahmet Yılmaz</h3>
+                        <p>Bağlanıyor...</p>
+                    </div>
+                    
+                    <div class="call-timer">00:00</div>
+                    
+                    <div class="call-controls">
+                        <div class="call-control-btn" onclick="toggleMute()">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="call-control-btn end-call" onclick="endCall()">
+                            <i class="fas fa-phone-slash"></i>
+                        </div>
+                        <div class="call-control-btn" onclick="toggleSpeaker()">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="call-status">
+                        <p class="status-text">Görüşme başlatılıyor...</p>
+                    </div>
+                    
+                    <div class="call-stats">
+                        <!-- Bu kısım görüşme bittiğinde doldurulacak -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Hakkımızda</h3>
+                    <p>İlan ve görüşme platformumuz ile kullanıcı ve üyeler arasında kolay iletişim sağlıyoruz.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="listings.html">İlanlar</a></li>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>İletişim</h3>
+                    <p><i class="fas fa-envelope"></i> info@ilanplatformu.com</p>
+                    <p><i class="fas fa-phone"></i> +90 555 123 4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 İlan Platformu - Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/site.js"></script>
+    <script>
+        let isMuted = false;
+        let isSpeakerOn = true;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Coin bakiyesini kontrol et
+            const coinBalance = parseInt(localStorage.getItem('coinBalance') || 0);
+            const coinBalanceEl = document.querySelector('.coin-balance');
+            
+            if (coinBalanceEl) {
+                coinBalanceEl.textContent = coinBalance;
+            }
+            
+            // Görüşme başlat
+            setTimeout(function() {
+                const statusText = document.querySelector('.status-text');
+                if (statusText) {
+                    statusText.textContent = 'Görüşme başladı';
+                }
+                
+                // Görüşme zamanlayıcısını başlat
+                startCallTimer();
+            }, 3000);
+        });
+        
+        function toggleMute() {
+            isMuted = !isMuted;
+            const muteBtn = document.querySelector('.call-control-btn:first-child i');
+            
+            if (muteBtn) {
+                if (isMuted) {
+                    muteBtn.className = 'fas fa-microphone-slash';
+                } else {
+                    muteBtn.className = 'fas fa-microphone';
+                }
+            }
+        }
+        
+        function toggleSpeaker() {
+            isSpeakerOn = !isSpeakerOn;
+            const speakerBtn = document.querySelector('.call-control-btn:last-child i');
+            
+            if (speakerBtn) {
+                if (isSpeakerOn) {
+                    speakerBtn.className = 'fas fa-volume-up';
+                } else {
+                    speakerBtn.className = 'fas fa-volume-mute';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

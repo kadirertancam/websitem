@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raporlar - Admin Paneli</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <h2>Admin Paneli</h2>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                    <li><a href="users.html"><i class="fas fa-users"></i> Kullanıcılar</a></li>
+                    <li><a href="members.html"><i class="fas fa-user-friends"></i> Üyeler</a></li>
+                    <li><a href="listings.html"><i class="fas fa-list"></i> İlanlar</a></li>
+                    <li><a href="transactions.html"><i class="fas fa-money-bill-wave"></i> İşlemler</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Raporlar</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                    <li><a href="javascript:logout()"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="dashboard-header">
+                <h2>İstatistik Raporları</h2>
+                <div class="user-info">
+                    <img src="../images/avatar-placeholder.jpg" alt="Admin Avatar">
+                    <span class="user-name">Admin</span>
+                </div>
+            </div>
+            
+            <div class="report-filters">
+                <div class="filter-group">
+                    <label for="report-type">Rapor Türü:</label>
+                    <select id="report-type">
+                        <option value="income">Gelir Raporu</option>
+                        <option value="users">Kullanıcı İstatistikleri</option>
+                        <option value="listings">İlan İstatistikleri</option>
+                        <option value="calls">Görüşme İstatistikleri</option>
+                        <option value="coins">Coin İstatistikleri</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="date-range">Tarih Aralığı:</label>
+                    <select id="date-range">
+                        <option value="today">Bugün</option>
+                        <option value="yesterday">Dün</option>
+                        <option value="last7days">Son 7 Gün</option>
+                        <option value="last30days">Son 30 Gün</option>
+                        <option value="thisMonth">Bu Ay</option>
+                        <option value="lastMonth">Geçen Ay</option>
+                        <option value="custom">Özel Aralık</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group custom-date-range" style="display: none;">
+                    <label for="start-date">Başlangıç:</label>
+                    <input type="date" id="start-date">
+                    
+                    <label for="end-date">Bitiş:</label>
+                    <input type="date" id="end-date">
+                </div>
+                
+                <button id="generate-report" class="btn">Rapor Oluştur</button>
+                <button id="export-report" class="btn"><i class="fas fa-download"></i> Dışa Aktar</button>
+            </div>
+            
+            <div class="report-summary">
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="summary-info">
+                            <h3>Toplam Gelir</h3>
+                            <p>15,750 TL</p>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="summary-info">
+                            <h3>Toplam Kullanıcı</h3>
+                            <p>150</p>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="summary-info">
+                            <h3>Toplam Üye</h3>
+                            <p>250</p>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-list"></i>
+                        </div>
+                        <div class="summary-info">
+                            <h3>Toplam İlan</h3>
+                            <p>120</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="report-charts">
+                <div class="chart">
+                    <h3>Aylık Gelir Grafiği</h3>
+                    <div class="chart-container">
+                        <!-- Grafik gösterimi için div -->
+                        <div id="income-chart"></div>
+                    </div>
+                </div>
+                
+                <div class="chart">
+                    <h3>Kullanıcı/Üye Artış Grafiği</h3>
+                    <div class="chart-container">
+                        <!-- Grafik gösterimi için div -->
+                        <div id="users-growth-chart"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="report-tables">
+                <div class="table-responsive">
+                    <h3>Gelir Dağılımı</h3>
+                    <table class="report-table">
+                        <thead>
+                            <tr>
+                                <th>Gelir Kaynağı</th>
+                                <th>İşlem Sayısı</th>
+                                <th>Toplam Tutar</th>
+                                <th>Yüzde</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Coin Satışları</td>
+                                <td>325</td>
+                                <td>9,750 TL</td>
+                                <td>62%</td>
+                            </tr>
+                            <tr>
+                                <td>İlan Yayınlama</td>
+                                <td>120</td>
+                                <td>3,600 TL</td>
+                                <td>23%</td>
+                            </tr>
+                            <tr>
+                                <td>Premium Üyelik</td>
+                                <td>80</td>
+                                <td>2,400 TL</td>
+                                <td>15%</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Toplam</th>
+                                <th>525</th>
+                                <th>15,750 TL</th>
+                                <th>100%</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                
+                <div class="table-responsive">
+                    <h3>En Popüler İlanlar</h3>
+                    <table class="report-table">
+                        <thead>
+                            <tr>
+                                <th>İlan ID</th>
+                                <th>İlan Başlığı</th>
+                                <th>Kullanıcı</th>
+                                <th>Görüntülenme</th>
+                                <th>Görüşmeler</th>
+                                <th>Toplam Kazanç</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#12</td>
+                                <td>Örnek İlan 1</td>
+                                <td>ahmet_yilmaz</td>
+                                <td>1,245</td>
+                                <td>87</td>
+                                <td>4,350 TL</td>
+                            </tr>
+                            <tr>
+                                <td>#45</td>
+                                <td>Örnek İlan 2</td>
+                                <td>mehmet_demir</td>
+                                <td>980</td>
+                                <td>65</td>
+                                <td>3,250 TL</td>
+                            </tr>
+                            <tr>
+                                <td>#33</td>
+                                <td>Örnek İlan 3</td>
+                                <td>ali_yildiz</td>
+                                <td>870</td>
+                                <td>52</td>
+                                <td>2,600 TL</td>
+                            </tr>
+                            <tr>
+                                <td>#56</td>
+                                <td>Örnek İlan 4</td>
+                                <td>zeynep_kaya</td>
+                                <td>750</td>
+                                <td>48</td>
+                                <td>2,400 TL</td>
+                            </tr>
+                            <tr>
+                                <td>#23</td>
+                                <td>Örnek İlan 5</td>
+                                <td>fatma_sahin</td>
+                                <td>680</td>
+                                <td>41</td>
+                                <td>2,050 TL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/main.js"></script>
+    <script>
+        // Rapor sayfasına özel JavaScript kodları
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tarih aralığı seçimi
+            const dateRange = document.getElementById('date-range');
+            const customDateRange = document.querySelector('.custom-date-range');
+            
+            dateRange.addEventListener('change', function() {
+                if (this.value === 'custom') {
+                    customDateRange.style.display = 'flex';
+                } else {
+                    customDateRange.style.display = 'none';
+                }
+            });
+            
+            // Rapor oluşturma butonu
+            const generateReportBtn = document.getElementById('generate-report');
+            generateReportBtn.addEventListener('click', function() {
+                // Rapor oluşturma işlemleri burada yapılacak
+                alert('Rapor oluşturuluyor... Gerçek bir uygulamada API isteği yapılacak.');
+            });
+            
+            // Dışa aktarma butonu
+            const exportReportBtn = document.getElementById('export-report');
+            exportReportBtn.addEventListener('click', function() {
+                // Dışa aktarma işlemleri burada yapılacak
+                alert('Rapor dışa aktarılıyor... Gerçek bir uygulamada PDF veya Excel olarak indirilecek.');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlan Detayı - İlan Platformu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>İlan Platformu</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="listings.html">İlanlar</a></li>
+                    <li><a href="about.html">Hakkımızda</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                    <li><a href="member/login.html" class="btn-login">Üye Girişi</a></li>
+                    <li><a href="user/login.html" class="btn-login">Kullanıcı Girişi</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="listing-detail">
+        <div class="container">
+            <div class="listing-detail-container">
+                <div class="listing-detail-info">
+                    <div class="listing-detail-header">
+                        <h2>Örnek İlan Başlığı</h2>
+                        <span class="price">75 TL/saat</span>
+                        <div class="user-info">
+                            <img src="images/avatar-placeholder.jpg" alt="User Avatar">
+                            <span>Ahmet Yılmaz</span>
+                        </div>
+                    </div>
+                    <div class="listing-detail-body">
+                        <h3>İlan Açıklaması</h3>
+                        <p>
+                            Bu bir örnek ilan açıklamasıdır. Gerçek uygulamada, bu alan kullanıcının ilan oluştururken girdiği içerikle doldurulacaktır. İlan açıklaması, sunulan hizmetin detaylarını, özellikleri ve diğer önemli bilgileri içerebilir.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor felis non magna volutpat, at tempus risus faucibus. Nullam at odio vitae enim bibendum vestibulum. Donec euismod velit vel nisi luctus, eget ultrices est dictum. Vestibulum sagittis varius augue, ac tincidunt odio pharetra at.
+                        </p>
+                        
+                        <h3>Sunulan Hizmetler</h3>
+                        <div class="listing-detail-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Örnek Hizmet 1</li>
+                                <li><i class="fas fa-check"></i> Örnek Hizmet 2</li>
+                                <li><i class="fas fa-check"></i> Örnek Hizmet 3</li>
+                                <li><i class="fas fa-check"></i> Örnek Hizmet 4</li>
+                                <li><i class="fas fa-check"></i> Örnek Hizmet 5</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>İletişim Tercihleri</h3>
+                        <div class="listing-detail-contact-options">
+                            <span class="contact-option"><i class="fas fa-phone"></i> Sesli Görüşme</span>
+                            <span class="contact-option"><i class="fas fa-video"></i> Görüntülü Görüşme</span>
+                        </div>
+                        
+                        <h3>Uygunluk Saatleri</h3>
+                        <p>Hafta içi 18:00-22:00, Hafta sonu 10:00-20:00</p>
+                    </div>
+                </div>
+                
+                <div class="listing-detail-sidebar">
+                    <h3>Görüşme Başlat</h3>
+                    <div class="coin-status">
+                        <p>Mevcut Bakiyeniz: <span class="coin-balance">0</span> Coin</p>
+                        <p>Görüşme Ücreti: <span>5 Coin/dakika</span></p>
+                    </div>
+                    
+                    <div class="call-action">
+                        <button id="start-call-btn" class="btn" onclick="startCall(1, 1)">
+                            <i class="fas fa-phone"></i> Sesli Görüşme Başlat
+                        </button>
+                        <button id="start-video-call-btn" class="btn" onclick="startCall(1, 1, true)">
+                            <i class="fas fa-video"></i> Görüntülü Görüşme Başlat
+                        </button>
+                    </div>
+                    
+                    <div class="coin-warning">
+                        <p><i class="fas fa-exclamation-circle"></i> Yetersiz bakiye! Görüşme yapmak için coin satın alın.</p>
+                        <a href="member/buy-coins.html" class="btn">Coin Satın Al</a>
+                    </div>
+                    
+                    <hr>
+                    
+                    <h3>Kullanıcı Bilgileri</h3>
+                    <div class="user-profile">
+                        <img src="images/avatar-placeholder.jpg" alt="User Avatar">
+                        <h4>Ahmet Yılmaz</h4>
+                        <p><i class="fas fa-star"></i> 4.8 (65 değerlendirme)</p>
+                        <p><i class="fas fa-calendar-alt"></i> Üyelik: Ocak 2025</p>
+                        <p><i class="fas fa-phone"></i> Toplam Görüşme: 127</p>
+                    </div>
+                    
+                    <hr>
+                    
+                    <h3>İlan Bilgileri</h3>
+                    <div class="listing-info">
+                        <p><i class="fas fa-eye"></i> Görüntülenme: 245</p>
+                        <p><i class="fas fa-calendar-alt"></i> Yayınlanma: 01.04.2025</p>
+                        <p><i class="fas fa-tag"></i> Kategori: Kategori 1</p>
+                    </div>
+                    
+                    <div class="listing-actions">
+                        <button class="btn-favorite"><i class="far fa-heart"></i> Favorilere Ekle</button>
+                        <button class="btn-report"><i class="fas fa-flag"></i> Bildir</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="similar-listings">
+                <h3>Benzer İlanlar</h3>
+                <div class="listing-grid">
+                    <!-- Örnek benzer ilanlar -->
+                    <div class="listing">
+                        <div class="listing-header">
+                            <h3>Benzer İlan 1</h3>
+                            <span class="price">50 TL/saat</span>
+                        </div>
+                        <div class="listing-body">
+                            <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                        </div>
+                        <div class="listing-footer">
+                            <a href="listing-detail.html?id=2" class="btn">Detaylar</a>
+                        </div>
+                    </div>
+                    <div class="listing">
+                        <div class="listing-header">
+                            <h3>Benzer İlan 2</h3>
+                            <span class="price">80 TL/saat</span>
+                        </div>
+                        <div class="listing-body">
+                            <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                        </div>
+                        <div class="listing-footer">
+                            <a href="listing-detail.html?id=3" class="btn">Detaylar</a>
+                        </div>
+                    </div>
+                    <div class="listing">
+                        <div class="listing-header">
+                            <h3>Benzer İlan 3</h3>
+                            <span class="price">65 TL/saat</span>
+                        </div>
+                        <div class="listing-body">
+                            <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                        </div>
+                        <div class="listing-footer">
+                            <a href="listing-detail.html?id=4" class="btn">Detaylar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Hakkımızda</h3>
+                    <p>İlan ve görüşme platformumuz ile kullanıcı ve üyeler arasında kolay iletişim sağlıyoruz.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="listings.html">İlanlar</a></li>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>İletişim</h3>
+                    <p><i class="fas fa-envelope"></i> info@ilanplatformu.com</p>
+                    <p><i class="fas fa-phone"></i> +90 555 123 4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 İlan Platformu - Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/site.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // URL'den ilan ID'sini al
+            const urlParams = new URLSearchParams(window.location.search);
+            const listingId = urlParams.get('id');
+            
+            if (listingId) {
+                // İlan detayını yükle
+                loadListingDetail(listingId);
+            }
+            
+            // Coin durumunu kontrol et
+            updateCoinWarningStatus();
+        });
+    </script>
+</body>
+</html>

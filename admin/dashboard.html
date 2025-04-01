@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Paneli - İlan Platformu</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <h2>Admin Paneli</h2>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                    <li><a href="users.html"><i class="fas fa-users"></i> Kullanıcılar</a></li>
+                    <li><a href="members.html"><i class="fas fa-user-friends"></i> Üyeler</a></li>
+                    <li><a href="listings.html"><i class="fas fa-list"></i> İlanlar</a></li>
+                    <li><a href="transactions.html"><i class="fas fa-money-bill-wave"></i> İşlemler</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Raporlar</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                    <li><a href="javascript:logout()"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="dashboard-header">
+                <h2>Hoş Geldiniz, <span class="user-name">Admin</span></h2>
+                <div class="user-info">
+                    <img src="../images/avatar-placeholder.jpg" alt="Admin Avatar">
+                    <span class="user-name">Admin</span>
+                </div>
+            </div>
+            
+            <div class="dashboard-cards">
+                <!-- Bu alan JavaScript ile doldurulacak -->
+            </div>
+            
+            <div class="dashboard-charts">
+                <div class="chart">
+                    <h3>Aylık Gelir</h3>
+                    <div class="chart-container">
+                        <!-- Grafik gösterimi için div -->
+                        <div id="income-chart"></div>
+                    </div>
+                </div>
+                
+                <div class="chart">
+                    <h3>Kullanıcı İstatistikleri</h3>
+                    <div class="chart-container">
+                        <!-- Grafik gösterimi için div -->
+                        <div id="users-chart"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-tables">
+                <div class="dashboard-table">
+                    <h3>Son Kayıt Olan Kullanıcılar</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Kullanıcı Adı</th>
+                                <th>E-posta</th>
+                                <th>Tip</th>
+                                <th>Kayıt Tarihi</th>
+                                <th>Durum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Örnek veri -->
+                            <tr>
+                                <td>#1</td>
+                                <td>ahmet_yilmaz</td>
+                                <td>ahmet@ornek.com</td>
+                                <td>Kullanıcı</td>
+                                <td>01.04.2025</td>
+                                <td><span class="status active">Aktif</span></td>
+                            </tr>
+                            <tr>
+                                <td>#2</td>
+                                <td>fatma_sahin</td>
+                                <td>fatma@ornek.com</td>
+                                <td>Üye</td>
+                                <td>31.03.2025</td>
+                                <td><span class="status active">Aktif</span></td>
+                            </tr>
+                            <tr>
+                                <td>#3</td>
+                                <td>mehmet_demir</td>
+                                <td>mehmet@ornek.com</td>
+                                <td>Kullanıcı</td>
+                                <td>30.03.2025</td>
+                                <td><span class="status active">Aktif</span></td>
+                            </tr>
+                            <tr>
+                                <td>#4</td>
+                                <td>zeynep_kaya</td>
+                                <td>zeynep@ornek.com</td>
+                                <td>Üye</td>
+                                <td>29.03.2025</td>
+                                <td><span class="status inactive">Pasif</span></td>
+                            </tr>
+                            <tr>
+                                <td>#5</td>
+                                <td>ali_yildiz</td>
+                                <td>ali@ornek.com</td>
+                                <td>Kullanıcı</td>
+                                <td>28.03.2025</td>
+                                <td><span class="status active">Aktif</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="dashboard-table">
+                    <h3>Son İşlemler</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Kullanıcı</th>
+                                <th>İşlem Türü</th>
+                                <th>Tutar</th>
+                                <th>Tarih</th>
+                                <th>Durum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Örnek veri -->
+                            <tr>
+                                <td>#1</td>
+                                <td>fatma_sahin</td>
+                                <td>Coin Satın Alma</td>
+                                <td>200 TL</td>
+                                <td>01.04.2025</td>
+                                <td><span class="status active">Tamamlandı</span></td>
+                            </tr>
+                            <tr>
+                                <td>#2</td>
+                                <td>ahmet_yilmaz</td>
+                                <td>İlan Yayınlama</td>
+                                <td>100 TL</td>
+                                <td>31.03.2025</td>
+                                <td><span class="status active">Tamamlandı</span></td>
+                            </tr>
+                            <tr>
+                                <td>#3</td>
+                                <td>zeynep_kaya</td>
+                                <td>Görüşme Ücreti</td>
+                                <td>75 TL</td>
+                                <td>30.03.2025</td>
+                                <td><span class="status active">Tamamlandı</span></td>
+                            </tr>
+                            <tr>
+                                <td>#4</td>
+                                <td>mehmet_demir</td>
+                                <td>Coin Satın Alma</td>
+                                <td>150 TL</td>
+                                <td>29.03.2025</td>
+                                <td><span class="status active">Tamamlandı</span></td>
+                            </tr>
+                            <tr>
+                                <td>#5</td>
+                                <td>ali_yildiz</td>
+                                <td>İlan Yayınlama</td>
+                                <td>100 TL</td>
+                                <td>28.03.2025</td>
+                                <td><span class="status active">Tamamlandı</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/site.js"></script>
+</body>
+</html>

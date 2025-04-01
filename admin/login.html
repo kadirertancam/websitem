@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Girişi - İlan Platformu</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>İlan Platformu</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Ana Sayfa</a></li>
+                    <li><a href="../listings.html">İlanlar</a></li>
+                    <li><a href="../about.html">Hakkımızda</a></li>
+                    <li><a href="../contact.html">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="form-container">
+                <h2>Admin Girişi</h2>
+                <form id="login-form" onsubmit="event.preventDefault(); login('admin');">
+                    <div class="form-group">
+                        <label for="username">Kullanıcı Adı</label>
+                        <input type="text" id="username" name="username" value="admin" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Şifre</label>
+                        <input type="password" id="password" name="password" value="admin123" required>
+                    </div>
+                    
+                    <div class="form-group remember-me">
+                        <label>
+                            <input type="checkbox" name="remember"> Beni Hatırla
+                        </label>
+                        <a href="forgot-password.html" class="forgot-password">Şifremi Unuttum</a>
+                    </div>
+                    
+                    <button type="submit" class="form-btn">Giriş Yap</button>
+                </form>
+                
+                <div class="auth-links">
+                    <p><a href="../index.html">Ana Sayfaya Dön</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Hakkımızda</h3>
+                    <p>İlan ve görüşme platformumuz ile kullanıcı ve üyeler arasında kolay iletişim sağlıyoruz.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="../index.html">Ana Sayfa</a></li>
+                        <li><a href="../listings.html">İlanlar</a></li>
+                        <li><a href="../about.html">Hakkımızda</a></li>
+                        <li><a href="../contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>İletişim</h3>
+                    <p><i class="fas fa-envelope"></i> info@ilanplatformu.com</p>
+                    <p><i class="fas fa-phone"></i> +90 555 123 4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 İlan Platformu - Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/site.js"></script>
+</body>
+</html>

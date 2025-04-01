@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlan ve Görüşme Platformu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>İlan Platformu</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="listings.html">İlanlar</a></li>
+                    <li><a href="about.html">Hakkımızda</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                    <li><a href="member/login.html" class="btn-login">Üye Girişi</a></li>
+                    <li><a href="user/login.html" class="btn-login">Kullanıcı Girişi</a></li>
+                    <li><a href="admin/login.html" class="btn-login">Admin Girişi</a></li>
+                    <li class="user-menu-btn" style="display: none;">
+                        <div class="avatar"><span class="initial">K</span></div>
+                        <div class="dropdown">
+                            <ul>
+                                <li><a href="#" class="panel-link">Panelim</a></li>
+                                <li><a href="#" id="user-profile-link">Profilim</a></li>
+                                <li class="divider"></li>
+                                <li><a href="javascript:logout()">Çıkış Yap</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>İlanlar ve Görüşme Platformuna Hoş Geldiniz</h2>
+            <p>Kullanıcılar ilanlarını yayınlayabilir, üyeler coin alarak kullanıcılarla sesli görüşme yapabilir.</p>
+            <div class="cta-buttons">
+                <a href="user/register.html" class="btn">İlan Vermek İstiyorum</a>
+                <a href="member/register.html" class="btn">İlan Görüntülemek İstiyorum</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Platform Özellikleri</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>İlan Yayınlama</h3>
+                    <p>Kullanıcılar detaylı açıklamalar ve ücret bilgileri ile ilanlarını kolayca yayınlayabilir.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-coins"></i>
+                    <h3>Coin Sistemi</h3>
+                    <p>Üyeler coin satın alarak istedikleri ilanlarla sesli görüşme yapabilirler.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <h3>Sesli Görüşme</h3>
+                    <p>Satın alınan coinler ile saatlik veya dakikalık sesli görüşme imkanı.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="latest-listings">
+        <div class="container">
+            <h2>En Son İlanlar</h2>
+            <div class="listing-grid">
+                <!-- Bu kısım dinamik olarak doldurulacak -->
+                <div class="listing">
+                    <div class="listing-header">
+                        <h3>Örnek İlan 1</h3>
+                        <span class="price">50 TL/saat</span>
+                    </div>
+                    <div class="listing-body">
+                        <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                    </div>
+                    <div class="listing-footer">
+                        <a href="#" class="btn">Detaylar</a>
+                    </div>
+                </div>
+                <div class="listing">
+                    <div class="listing-header">
+                        <h3>Örnek İlan 2</h3>
+                        <span class="price">75 TL/saat</span>
+                    </div>
+                    <div class="listing-body">
+                        <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                    </div>
+                    <div class="listing-footer">
+                        <a href="#" class="btn">Detaylar</a>
+                    </div>
+                </div>
+                <div class="listing">
+                    <div class="listing-header">
+                        <h3>Örnek İlan 3</h3>
+                        <span class="price">100 TL/saat</span>
+                    </div>
+                    <div class="listing-body">
+                        <p>Bu bir örnek ilan açıklamasıdır. Gerçek ilanlar kullanıcılar tarafından eklenecektir.</p>
+                    </div>
+                    <div class="listing-footer">
+                        <a href="#" class="btn">Detaylar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2>Nasıl Çalışır?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Kayıt Olun</h3>
+                    <p>Kullanıcı veya üye olarak platformumuza kayıt olun.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>İlan Verin veya Görüntüleyin</h3>
+                    <p>Kullanıcılar ilan verebilir, üyeler ilanları görüntüleyebilir.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Coin Satın Alın</h3>
+                    <p>Üyeler, görüşme yapmak için coin satın alabilir.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Görüşme Yapın</h3>
+                    <p>Satın alınan coin ile ilan sahipleriyle sesli görüşme yapabilirsiniz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Hakkımızda</h3>
+                    <p>İlan ve görüşme platformumuz ile kullanıcı ve üyeler arasında kolay iletişim sağlıyoruz.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Hızlı Linkler</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="listings.html">İlanlar</a></li>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>İletişim</h3>
+                    <p><i class="fas fa-envelope"></i> info@ilanplatformu.com</p>
+                    <p><i class="fas fa-phone"></i> +90 555 123 4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 İlan Platformu - Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/site.js"></script>
+</body>
+</html>

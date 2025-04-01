@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönlendiriliyor - İlan Platformu</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+        .loader {
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 5px solid #fff;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 30px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="loader"></div>
+        <h1>Yönlendiriliyor</h1>
+        <p>Doğru sayfaya yönlendiriliyorsunuz. Lütfen bekleyin...</p>
+        <a href="index.html" class="btn">Ana Sayfaya Dön</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // URL'den yönlendirme tipini al
+            const urlParams = new URLSearchParams(window.location.search);
+            const redirectType = urlParams.get('type');
+            
+            if (redirectType) {
+                // 2 saniye sonra yönlendir
+                setTimeout(() => {
+                    if (redirectType === 'admin') {
+                        window.location.href = 'admin/dashboard.html';
+                    } else if (redirectType === 'user') {
+                        window.location.href = 'user/dashboard.html';
+                    } else if (redirectType === 'member') {
+                        window.location.href = 'member/dashboard.html';
+                    } else {
+                        window.location.href = 'index.html';
+                    }
+                }, 2000);
+            } else {
+                // Yönlendirme tipi yoksa ana sayfaya git
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
