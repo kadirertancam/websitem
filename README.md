@@ -74,5 +74,4 @@ Bu proje sadece frontend uygulamasıdır. Gerçek bir uygulama için backend (su
 
 ## İletişim
 
-- E-posta: info@ilanplatformu.com
-- Telefon: +90 555 123 4567
+- E-posta: info@justtech.work
